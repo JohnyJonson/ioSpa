@@ -1,0 +1,91 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source%27))()
+local Window = Rayfield:CreateWindow({
+    Name = "Blox fruits",
+    LoadingTitle = "Blox fruits private script",
+    LoadingSubtitle = "By your brother",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil, -- Create a custom folder for your hub/game
+        FileName = "Blox fruits"
+    },
+        Discord = {
+            Enabled = false,
+            Invite = "", -- The Discord invite code, do not include discord.gg/
+            RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+        Title = "Key",
+        Subtitle = "Key System",
+        Note = "Blox fruits",
+        FileName = "KEY",
+        SaveKey = true,
+        GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+        Key = "private"
+    }
+})
+local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+    Name = "MoreHealth",
+    Callback = function()
+        game.Players.LocalPlayer.Main.Health = 1000000000
+    end,
+})
+local LoadButton = Tab:CreateButton({
+    Name = "Open HUB+",
+    Callback = function()
+        local Hub = Instance.new("ScreenGui")
+local Background = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local DestroyServerButton = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+
+--Properties:
+
+Hub.Name = "Hub+"
+Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Background.Name = "Background"
+Background.Parent = Hub
+Background.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Background.Position = UDim2.new(0.243076921, 0, 0.3125, 0)
+Background.Size = UDim2.new(0, 476, 0, 228)
+
+Title.Name = "Title"
+Title.Parent = Background
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(-0.0147058824, 0, -0.0175438598, 0)
+Title.Size = UDim2.new(0, 108, 0, 13)
+Title.Font = Enum.Font.Gotham
+Title.Text = "Hub+"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+
+DestroyServerButton.Name = "Destroy ServerButton"
+DestroyServerButton.Parent = Background
+DestroyServerButton.BackgroundColor3 = Color3.fromRGB(0, 55, 255)
+DestroyServerButton.BorderSizePixel = 0
+DestroyServerButton.Position = UDim2.new(0.0063025211, 0, 0.105263159, 0)
+DestroyServerButton.Size = UDim2.new(0, 116, 0, 16)
+DestroyServerButton.Font = Enum.Font.Gotham
+DestroyServerButton.Text = "Destroy Server"
+DestroyServerButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+DestroyServerButton.TextScaled = true
+DestroyServerButton.TextSize = 14.000
+DestroyServerButton.TextWrapped = true
+
+UIGridLayout.Parent = Background
+UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout.CellSize = UDim2.new(0, 100, 0, 25)
+UIGridLayout.StartCorner = Enum.StartCorner.BottomLeft
+Background.Draggable = true
+Background.Selectable = true
+Background.Active = true
+DestroyServerButton.Activated:Connect(function()
+    game.StarterGui:FindFirstChild("Main"):Destroy()
+end)
+    end,
+})
