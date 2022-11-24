@@ -1,91 +1,180 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source%27))()
-local Window = Rayfield:CreateWindow({
-    Name = "Blox fruits",
-    LoadingTitle = "Blox fruits private script",
-    LoadingSubtitle = "By your brother",
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = nil, -- Create a custom folder for your hub/game
-        FileName = "Blox fruits"
-    },
-        Discord = {
-            Enabled = false,
-            Invite = "", -- The Discord invite code, do not include discord.gg/
-            RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-        },
-    KeySystem = true, -- Set this to true to use our key system
-    KeySettings = {
-        Title = "Key",
-        Subtitle = "Key System",
-        Note = "Blox fruits",
-        FileName = "KEY",
-        SaveKey = true,
-        GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-        Key = "private"
-    }
-})
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+	local Window = Rayfield:CreateWindow({
+		Name = "Blox fruits",
+		LoadingTitle = "Blox fruits private script",
+		LoadingSubtitle = "By your brother",
+		ConfigurationSaving = {
+			Enabled = true,
+			FolderName = nil, -- Create a custom folder for your hub/game
+			FileName = "Blox fruits"
+		},
+		Discord = {
+			Enabled = false,
+			Invite = "", -- The Discord invite code, do not include discord.gg/
+			RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+		},
+		KeySystem = true, -- Set this to true to use our key system
+		KeySettings = {
+			Title = "Key",
+			Subtitle = "Key System",
+			Note = "Blox fruits",
+			FileName = "KEY",
+			SaveKey = true,
+			GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+			Key = "private"
+		}
+	})
 local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
 
-local Button = Tab:CreateButton({
-    Name = "MoreHealth",
-    Callback = function()
-        game.Players.LocalPlayer.Main.Health = 1000000000
-    end,
+	local Button = Tab:CreateButton({
+		Name = "MoreHealth",
+		Callback = function()
+			game.Players.LocalPlayer.Main.Health = 1000000000
+		end,
+	})
+	local LoadButton = Tab:CreateButton({
+		Name = "Open HUB+",
+		Callback = function()
+			local Hub = Instance.new("ScreenGui")
+			local Background = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local DestroyServerButton = Instance.new("TextButton")
+			local UIGridLayout = Instance.new("UIGridLayout")
+
+			--Properties:
+
+			Hub.Name = "Hub+"
+			Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+			Background.Name = "Background"
+			Background.Parent = Hub
+			Background.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+			Background.Position = UDim2.new(0.243076921, 0, 0.3125, 0)
+			Background.Size = UDim2.new(0, 476, 0, 228)
+
+			Title.Name = "Title"
+			Title.Parent = Background
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderSizePixel = 0
+			Title.Position = UDim2.new(-0.0147058824, 0, -0.0175438598, 0)
+			Title.Size = UDim2.new(0, 108, 0, 13)
+			Title.Font = Enum.Font.Gotham
+			Title.Text = "Hub+"
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextSize = 14.000
+
+			DestroyServerButton.Name = "Destroy ServerButton"
+			DestroyServerButton.Parent = Background
+			DestroyServerButton.BackgroundColor3 = Color3.fromRGB(0, 55, 255)
+			DestroyServerButton.BorderSizePixel = 0
+			DestroyServerButton.Position = UDim2.new(0.0063025211, 0, 0.105263159, 0)
+			DestroyServerButton.Size = UDim2.new(0, 116, 0, 16)
+			DestroyServerButton.Font = Enum.Font.Gotham
+			DestroyServerButton.Text = "Destroy Server"
+			DestroyServerButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+			DestroyServerButton.TextScaled = true
+			DestroyServerButton.TextSize = 14.000
+			DestroyServerButton.TextWrapped = true
+
+			UIGridLayout.Parent = Background
+			UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+			UIGridLayout.CellSize = UDim2.new(0, 100, 0, 25)
+			UIGridLayout.StartCorner = Enum.StartCorner.BottomLeft
+			Background.Draggable = true
+			Background.Selectable = true
+			Background.Active = true
+			DestroyServerButton.Activated:Connect(function()
+				game.StarterGui:FindFirstChild("Main"):Destroy()
+			end)
+		end,
 })
-local LoadButton = Tab:CreateButton({
-    Name = "Open HUB+",
-    Callback = function()
-        local Hub = Instance.new("ScreenGui")
-local Background = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local DestroyServerButton = Instance.new("TextButton")
-local UIGridLayout = Instance.new("UIGridLayout")
+local OtherTab = Window:CreateTab("OtherLibrarys", 4483362458)
+OtherTab:CreateButton({
+		Name = "iso",
+		Callback = function()
+		local ScreenGui = Instance.new("ScreenGui")
+		local Background = Instance.new("Frame")
+		local UIGridLayout = Instance.new("UIGridLayout")
 
---Properties:
+		--Properties:
 
-Hub.Name = "Hub+"
-Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+		ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-Background.Name = "Background"
-Background.Parent = Hub
-Background.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-Background.Position = UDim2.new(0.243076921, 0, 0.3125, 0)
-Background.Size = UDim2.new(0, 476, 0, 228)
+		Background.Name = "Background"
+		Background.Parent = ScreenGui
+		Background.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		Background.BorderColor3 = Color3.fromRGB(81, 86, 74)
+		Background.BorderSizePixel = 11
+		Background.Position = UDim2.new(0.0113285277, 0, 0.0687919483, 0)
+		Background.Size = UDim2.new(0.0113285277, 0, 0.807047069, 0)
+		Background.ZIndex = 0
 
-Title.Name = "Title"
-Title.Parent = Background
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.BorderSizePixel = 0
-Title.Position = UDim2.new(-0.0147058824, 0, -0.0175438598, 0)
-Title.Size = UDim2.new(0, 108, 0, 13)
-Title.Font = Enum.Font.Gotham
-Title.Text = "Hub+"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 14.000
+		UIGridLayout.Parent = Background
+		UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+		UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		UIGridLayout.CellSize = UDim2.new(0, 100, 0, 27)
+		UIGridLayout.StartCorner = Enum.StartCorner.TopRight
 
-DestroyServerButton.Name = "Destroy ServerButton"
-DestroyServerButton.Parent = Background
-DestroyServerButton.BackgroundColor3 = Color3.fromRGB(0, 55, 255)
-DestroyServerButton.BorderSizePixel = 0
-DestroyServerButton.Position = UDim2.new(0.0063025211, 0, 0.105263159, 0)
-DestroyServerButton.Size = UDim2.new(0, 116, 0, 16)
-DestroyServerButton.Font = Enum.Font.Gotham
-DestroyServerButton.Text = "Destroy Server"
-DestroyServerButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-DestroyServerButton.TextScaled = true
-DestroyServerButton.TextSize = 14.000
-DestroyServerButton.TextWrapped = true
+		-- Module Scripts:
 
-UIGridLayout.Parent = Background
-UIGridLayout.FillDirection = Enum.FillDirection.Vertical
-UIGridLayout.CellSize = UDim2.new(0, 100, 0, 25)
-UIGridLayout.StartCorner = Enum.StartCorner.BottomLeft
-Background.Draggable = true
-Background.Selectable = true
-Background.Active = true
-DestroyServerButton.Activated:Connect(function()
-    game.StarterGui:FindFirstChild("Main"):Destroy()
-end)
-    end,
+		local fake_module_scripts = {}
+
+		do -- Background.Library
+			local Script = Instance.new('ModuleScript', Background)
+			Script.Name = "Library"
+			local function module_script()
+				local Library = {}
+				local TweenService = game:GetService("TweenService")
+
+				function Library:TweenLoad()
+					Background:TweenSize(UDim2.new(0.305, 0,0.807, 0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1.23, true)
+				end
+				function Library:CreateButton(Text : string, ButtonName, CallBack)
+					local Button = Instance.new("TextButton")
+					Button.Parent = script.Parent
+					Button.Name = ButtonName
+					Button.Text = Text
+					Button.TextColor3 = Color3.new(0, 1, 0.584314)
+					Button.BackgroundColor3 = Color3.new(0.435294, 0.435294, 0.435294)
+					if Library:TweenLoad() then
+						Button.Visible = false
+						wait(2)
+						Button.Visible = true
+					end
+					Button.Activated:Connect(CallBack)
+				end
+				task.wait(1)
+				Library:TweenLoad()
+
+
+				return Library
+
+			end
+			fake_module_scripts[Script] = module_script
+		end
+
+
+		-- Scripts:
+
+		local function TZOJU_fake_script() -- Background.LocalScript 
+			local script = Instance.new('LocalScript', Background)
+			local req = require
+			local require = function(obj)
+				local fake = fake_module_scripts[obj]
+				if fake then
+					return fake()
+				end
+				return req(obj)
+			end
+
+			local Library = require(Background.Library)
+			task.wait(5)
+			Library:TweenLoad()
+			Library:CreateButton("Btn-Text", "AllFruits", function()
+				print("Pressed")
+			end)
+		end
+		coroutine.wrap(TZOJU_fake_script)()
+		end,
 })
