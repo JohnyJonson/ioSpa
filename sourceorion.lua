@@ -1,4 +1,4 @@
-ocal OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "io.Spa HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "iospa"})
 
 
@@ -31,9 +31,9 @@ Tab:AddColorpicker({
 Tab:AddTextbox({
 	Name = "Kill player",
 	Default = "",
-	TextDisappear = true,
+	TextDisappear = false,
 	Callback = function(Value)
-		Value:Kick()
+		Value:Kick("Banned forever!")
 	end	  
 })
 
