@@ -22,7 +22,7 @@ Tab:AddColorpicker({
 	Name = "TorsoColor",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
-        RE.OnServerEvent:Connect(function()
+        RE.OnClientEvent:Connect(function()
             game.Players.LocalPlayer.Character.UpperTorso.Color3 = Value
         end)
 		RE:FireAllClients(Value)
