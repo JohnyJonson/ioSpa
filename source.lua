@@ -21,7 +21,7 @@ _G.Key = "token-key?php.index=private"
 _G.KeyInput = "string"
 Tab:AddTextbox({
 	Name = "Key",
-	Default = "default box input",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.KeyInput = Value 
