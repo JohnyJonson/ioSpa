@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "io.Spa HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "iospa"})
+local Window = OrionLib:MakeWindow({Name = "io.Spa HUB", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 local Tab = Window:MakeTab({
@@ -19,21 +19,19 @@ local Section = Tab:AddSection({
 local RE = Instance.new("RemoteEvent", game.ReplicatedStorage)
 RE.Name = "clr"
 Tab:AddColorpicker({
-	Name = "TorsoColor",
+	Name = "TorsoColor (not working)",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
-        RE.OnClientEvent:Connect(function()
-            game.Players.LocalPlayer.Character.UpperTorso.Color3 = Value
+        
         end)
-		RE:FireAllClients(Value)
-	end	  
+		  
 })
 Tab:AddTextbox({
-	Name = "Kill player",
+	Name = "Kick player (will be fixed later)",
 	Default = "",
 	TextDisappear = false,
 	Callback = function(Value)
-		Value:Kick("Banned forever!")
+		
 	end	  
 })
 
@@ -80,9 +78,9 @@ Default = <keycode> - The default value of the bind.
 Hold = <bool> - Makes the bind work like: Holding the key > The bind returns true, Not holding the key > Bind returns false.
 Callback = <function> - The function of the bind.
 ]]Tab:AddDropdown({
-	Name = "Normal",
+	Name = "print something",
 	Default = "1",
-	Options = {"Delete legs", "Delete your arm"},
+	Options = {"ok", "LOL"},
 	Callback = function(Value)
 		print(Value)
 	end    
