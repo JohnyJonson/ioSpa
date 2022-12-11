@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "io.Spa HUB", HidePremium = false, Sa
 
 
 local Tab = Window:MakeTab({
-	Name = "Blox fruits",
+	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -19,10 +19,11 @@ local Section = Tab:AddSection({
 local RE = Instance.new("RemoteEvent", game.ReplicatedStorage)
 RE.Name = "clr"
 Tab:AddColorpicker({
-	Name = "TorsoColor (not working)",
+	Name = "Arms color",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
-        
+        game.Players.LocalPlayer.Character.RightArm.Color3 = Value
+	game.Players.LocalPlayer.Character.LeftArm.Color3 = Value
         end)
 		  
 })
