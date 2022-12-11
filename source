@@ -13,7 +13,7 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 local Tab = Window:MakeTab({
-	Name = "Tab 1",
+	Name = "MainTab",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -22,4 +22,18 @@ local Tab = Window:MakeTab({
 Name = <string> - The name of the tab.
 Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+		
+	end    
+})
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
 ]]
