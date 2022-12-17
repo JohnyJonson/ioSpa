@@ -9,4 +9,4 @@ io.spa is a **basic script**
 It can be used to idk all things
 Idk i think its FE
 ### Where is the script?
-`loadstring(game:HttpGet('https://raw.githubusercontent.com/JohnyJonson/ioSpa/main/Orion.lua'))`
+`loadstring(game:HttpGet('https://raw.githubusercontent.com/JohnyJonson/ioSpa/main/Orion.lua'))` ***no longer avalible new coming soon!***
