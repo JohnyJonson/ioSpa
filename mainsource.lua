@@ -22,8 +22,8 @@ Tab:AddColorpicker({
 	Name = "Arms color",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
-        game.Players.LocalPlayer.Character.RightArm.Color3 = Value
-	game.Players.LocalPlayer.Character.LeftArm.Color3 = Value
+        game.Players.LocalPlayer.Character.RightArm.Color = Value
+	game.Players.LocalPlayer.Character.LeftArm.Color = Value
         end)
 		  
 })
