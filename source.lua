@@ -1,6 +1,6 @@
 local Library = {}
 function Library.Init()
-  print("started, Loaded!")
+  print("loaded!, Loaded!")
   
   end
 
